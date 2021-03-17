@@ -1,10 +1,43 @@
-//Routes list
-//POST /ufc/ allows users to post a new fight night
-//PUT /ufc/:id updates the info from the edit page
-//GET / allows users to see the index of MMA organizations
-//GET /ufc allows users to see the index of UFC fight nights
-//GET /new allows users to go to the new page to create a new fight night
-//GET /ufc/:id allows users to see the show page of UFC fight nights
-//DELETE /ufc/:id allows users to delete a fight night
-//GET /ufc/:id/edit brings users to edit page
-//GET /ufc/seed seeds the UFC index with fight nights
+const express = require('express')
+const router = express.Router()
+
+const Fight = require('../models/ufc')
+
+router.get('/', (req, res) => {
+  Fight.find({}, (err, foundFights, next) => {
+    if (err) {
+      console.log(err)
+      next(err)
+    } else {
+      res.render('index.ejs', {
+        fights: foundFights,
+      })
+    }
+  })
+})
+
+router.get('/seed', (req, res) => {
+  Fight.create([
+    {
+      name: 'UFC fight night 200',
+      date: 03/29/2021,
+      time: '8:00 PM',
+      whereToWatch: 'ESPN +',
+      fightList: ['Jon Jones vs Francis Ngannou']
+    },
+    {
+      name: 'UFC fight night 201',
+      date: 04/07/2021,
+      time: '8:00 PM',
+      whereToWatch: 'ESPN +',
+      fightList: ['Stipe vs Derrick Lewis']
+    }
+  ], (err, data) => {
+    if(err) {
+      console.log(err)
+    }
+    res.redirect('/')
+  })
+})
+
+module.exports = router
