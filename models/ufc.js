@@ -1,6 +1,14 @@
-//field names and datatypes
-// name: String,
-// date: Date,
-// time: String,
-// whereToWatch: String,
-// fightList: Array,
+const mongoose = require('mongoose')
+const {Schema, model} = mongoose
+
+const fightSchema = new Schema({
+  name: {type: String, required: true},
+  date: {type: Date, required: true},
+  time: {type: String, required: true},
+  whereToWatch: {type: String, required: true},
+  fightList: {type: Array, required: true},
+})
+
+const Fight = model('Fight', fightSchema)
+
+module.exports = Fight
