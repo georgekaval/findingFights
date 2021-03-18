@@ -1,0 +1,16 @@
+<%- include('./partials/header.ejs') %>
+<%- include('./partials/nav.ejs') %>
+<main>
+  <h2>Fight Show Page</h2>
+  <ul>
+    <li><%=fight.name%></li>
+    <li><%=fight.date%></li>
+    <li><%=fight.time%></li>
+    <li><%=fight.whereToWatch%></li>
+    <li><%=fight.fightList%></li>
+  </ul>
+  <a href="/ufc">Back to UFC page</a>
+
+</main>
+
+<%- include('./partials/footer.ejs') %>

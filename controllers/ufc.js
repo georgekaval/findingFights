@@ -16,6 +16,10 @@ router.get('/', (req, res) => {
   })
 })
 
+router.get('/new', (req, res) => {
+  res.render('new.ejs')
+})
+
 router.get('/seed', (req, res) => {
   Fight.create([
     {
@@ -40,4 +44,21 @@ router.get('/seed', (req, res) => {
   })
 })
 
+router.post('/', (req, res) => {
+  Fight.create(req.body, (error, createdFight) => {
+    if (error) {
+      console.log(error)
+      res.send(error)
+    }
+    else {
+      res.redirect('/ufc')
+    }
+  })
+})
+
+router.get('/:id', (req, res) => {
+  Fight.findById(req.params.id, (err, foundFight) => {
+    res.render('show.ejs', {fight: foundFight})
+  })
+})
 module.exports = router
