@@ -61,4 +61,15 @@ router.get('/:id', (req, res) => {
     res.render('show.ejs', {fight: foundFight})
   })
 })
+
+router.delete('/:id', (req, res) => {
+  Fight.findByIdAndRemove(req.params.id, (err, data) => {
+    if (err) {
+      console.log(err)
+    } else {
+      res.redirect('/ufc')
+    }
+  })
+})
+
 module.exports = router

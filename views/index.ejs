@@ -10,7 +10,7 @@
         <p><%=fights[i].fightList[0]%>
         </p>
         <a href="/fights/<%=fights[i].id%>/edit">Edit</a>
-        <form  action="/fights/<%=fights[i].id%>?_method=DELETE" method="POST">
+        <form  action="/ufc/<%=fights[i].id%>?_method=DELETE" method="POST">
           <button>Delete</button>
         </form>
       </li>
