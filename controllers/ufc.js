@@ -24,14 +24,14 @@ router.get('/seed', (req, res) => {
   Fight.create([
     {
       name: 'UFC fight night 200',
-      date: 03/29/2021,
+      date: "2021-03-29T20:00:00",
       time: '8:00 PM',
       whereToWatch: 'ESPN +',
       fightList: ['Jon Jones vs Francis Ngannou']
     },
     {
       name: 'UFC fight night 201',
-      date: 04/07/2021,
+      date: "2021-04-07T10:08:07",
       time: '8:00 PM',
       whereToWatch: 'ESPN +',
       fightList: ['Stipe vs Derrick Lewis']
@@ -40,7 +40,7 @@ router.get('/seed', (req, res) => {
     if(err) {
       console.log(err)
     }
-    res.redirect('/')
+    res.redirect('/ufc')
   })
 })
 
@@ -83,4 +83,5 @@ router.put('/:id', (req, res) => {
     res.redirect('/ufc')
   })
 })
+
 module.exports = router
