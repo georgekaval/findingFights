@@ -10,14 +10,14 @@ router.get('/', (req, res) => {
       next(err)
     } else {
       res.render('index.ejs', {
-        fights: foundFights,
+        fights: foundFights, currentUser: req.session.currentUser
       })
     }
   })
 })
 
 router.get('/new', (req, res) => {
-  res.render('new.ejs')
+  res.render('new.ejs', {currentUser: req.session.currentUser})
 })
 
 router.get('/seed', (req, res) => {
@@ -58,7 +58,7 @@ router.post('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   Fight.findById(req.params.id, (err, foundFight) => {
-    res.render('show.ejs', {fight: foundFight})
+    res.render('show.ejs', {fight: foundFight, currentUser: req.session.currentUser})
   })
 })
 
@@ -74,7 +74,7 @@ router.delete('/:id', (req, res) => {
 
 router.get('/:id/edit', (req, res) => {
   Fight.findById(req.params.id, (err, foundFight) => {
-    res.render('edit.ejs', { fight: foundFight})
+    res.render('edit.ejs', { fight: foundFight, currentUser: req.session.currentUser})
   })
 })
 

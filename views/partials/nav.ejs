@@ -1,7 +1,22 @@
 <nav>
   <a href="/">HOME</a>
-
-
-
+  <a href="/ufc">UFC Fight Cards</a>
+  <a href="/bellator">Bellator Fight Cards</a>
+  <a href="/onefc">One FC Fight Cards</a>
+  <ul>
+    <% if (currentUser) { %>
+      <li><a href="/ufc/new">Add a fight</a>
+      </li>
+      <li>Welcome <%= currentUser.username %></li>
+      <li>
+        <form  action="/sessions?_method=DELETE" method="POST">
+          <button>Log Out</button>
+        </form>
+      </li>
+    <% } else { %>
+      <li><a href="/sessions/new">Log In</a></li>
+      <li><a href="/users/new">Sign Up</a></li>
+    <% } %>
+  </ul>
 
 </nav>

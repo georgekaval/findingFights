@@ -13,7 +13,7 @@ router.post('/', (req, res) => {
   User.create(req.body, (err, createdUser) => {
     if (err){
       if(err.code===11000){
-        red.send('user already exists!!')
+        res.send('user already exists!!')
       }
       else{
         res.send(err)
