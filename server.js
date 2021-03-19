@@ -37,16 +37,14 @@ const sessionsControllers = require('./controllers/sessions')
 const bellatorControllers = require('./controllers/bellator')
 const onefcControllers = require('./controllers/onefc')
 app.use('/ufc', ufcControllers)
-// app.use('/users', usersControllers)
+app.use('/users', usersControllers)
 // app.use('/sessions', sessionsControllers)
 // app.use('/bellator', bellatorControllers)
 // app.use('/onefc', onefcControllers)
 
-// app.get('/', (req, res) => {
-//   res.render('home.ejs', {
-//     currentUser: req.session.currentUser
-//   })
-// })
+app.get('/', (req, res) => {
+  res.render('home.ejs')
+})
 app.listen(PORT, () => {
   console.log('Server is listening!!!');
 })
