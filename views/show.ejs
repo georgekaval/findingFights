@@ -4,10 +4,10 @@
   <h2>Fight Show Page</h2>
   <ul>
     <li><%=fight.name%></li>
-    <li><%=fight.date%></li>
-    <li><%=fight.time%></li>
+    <li><%=fight.date.toLocaleString()%> EST</li>
     <li><%=fight.whereToWatch%></li>
     <li><%=fight.fightList%></li>
+    <a href="/ufc/<%=fight.id%>/edit">Edit</a>
   </ul>
   <a href="/ufc">Back to UFC page</a>
 

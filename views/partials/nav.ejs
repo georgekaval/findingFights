@@ -1,8 +1,13 @@
-<nav>
-  <a href="/">HOME</a>
-  <a href="/ufc">UFC Fight Cards</a>
-  <a href="/bellator">Bellator Fight Cards</a>
-  <a href="/onefc">One FC Fight Cards</a>
+<div class="container">
+
+
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="text-light" href="/">HOME</a>
+
+  <a class="text-light" href="/ufc">UFC Fight Cards</a>
+  <a class="text-light" href="/bellator">Bellator Fight Cards</a>
+  <a class="text-light" href="/onefc">One FC Fight Cards</a>
   <ul>
     <% if (currentUser) { %>
       <li><a href="/ufc/new">Add a fight</a>
@@ -14,9 +19,10 @@
         </form>
       </li>
     <% } else { %>
-      <li><a href="/sessions/new">Log In</a></li>
-      <li><a href="/users/new">Sign Up</a></li>
+      <li><a class="text-light" href="/sessions/new">Log In</a></li>
+      <li><a class="text-light" href="/users/new">Sign Up</a></li>
     <% } %>
   </ul>
-
+</div>
 </nav>
+</div>

@@ -1,3 +1,4 @@
+
 #mmaContainer{
   display: flex;
   flex-direction: row;
@@ -13,4 +14,21 @@
 
 .container{
   text-align: center;
+}
+
+footer{
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  height: 2.5rem;
+
+}
+main{
+text-align: center;
+
+}
+p{
+
+  white-space: pre;
 }
