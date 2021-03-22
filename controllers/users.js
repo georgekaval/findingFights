@@ -10,6 +10,11 @@ router.get('/new', (req, res) => {
 router.post('/', (req, res) => {
   if(req.body.password.length < 8){
     res.redirect('users/new')
+    // const turnRed = () => {
+    //   const messagePass = document.getElementById('passMessage')
+    //   messagePass.style.color = "red";
+    //   turnRed()
+    // }
 
   } else{
     req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
