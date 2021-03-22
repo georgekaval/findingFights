@@ -1,13 +1,13 @@
 const mongoose = require('mongoose')
 const {Schema, model} = mongoose
 
-const fightSchema = new Schema({
+const ufcSchema = new Schema({
   name: {type: String, required: true},
   date: {type: Date, required: true},
   whereToWatch: {type: String, required: true},
   fightList: {type: Array, required: true},
 }, {timestamps: true})
 
-const Fight = model('Fight', fightSchema)
+const UFC = model('UFC', ufcSchema)
 
-module.exports = Fight
+module.exports = UFC

@@ -40,7 +40,7 @@ const onefcControllers = require('./controllers/onefc')
 app.use('/ufc', ufcControllers)
 app.use('/users', usersControllers)
 app.use('/sessions', sessionsControllers)
-// app.use('/bellator', bellatorControllers)
+app.use('/bellator', bellatorControllers)
 // app.use('/onefc', onefcControllers)
 
 app.get('/', (req, res) => {

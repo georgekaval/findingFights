@@ -1,15 +1,15 @@
 const express = require('express')
 const router = express.Router()
 
-const Fight = require('../models/fights')
+const Bellator = require('../models/bellator')
 
 router.get('/', (req, res) => {
-  Fight.find({}, (err, foundFights, next) => {
+  Bellator.find({}, (err, foundFights, next) => {
     if (err) {
       console.log(err)
       next(err)
     } else {
-      res.render('index.ejs', {
+      res.render('bellator/index.ejs', {
         fights: foundFights, currentUser: req.session.currentUser
       })
     }
@@ -17,11 +17,11 @@ router.get('/', (req, res) => {
 })
 
 router.get('/new', (req, res) => {
-  res.render('new.ejs', {currentUser: req.session.currentUser})
+  res.render('bellator/new.ejs', {currentUser: req.session.currentUser})
 })
 
 router.get('/seed', (req, res) => {
-  Fight.create([
+  Bellator.create([
     {
       name: 'Bellator fight night 200',
       date: "2021-03-29T20:00:00",
@@ -43,7 +43,7 @@ router.get('/seed', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  Fight.create(req.body, (error, createdFight) => {
+  Bellator.create(req.body, (error, createdFight) => {
     if (error) {
       console.log(error)
       res.send(error)
@@ -55,13 +55,13 @@ router.post('/', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-  Fight.findById(req.params.id, (err, foundFight) => {
-    res.render('show.ejs', {fight: foundFight, currentUser: req.session.currentUser})
+  Bellator.findById(req.params.id, (err, foundFight) => {
+    res.render('bellator/show.ejs', {fight: foundFight, currentUser: req.session.currentUser})
   })
 })
 
 router.delete('/:id', (req, res) => {
-  Fight.findByIdAndRemove(req.params.id, (err, data) => {
+  Bellator.findByIdAndRemove(req.params.id, (err, data) => {
     if (err) {
       console.log(err)
     } else {
@@ -71,13 +71,13 @@ router.delete('/:id', (req, res) => {
 })
 
 router.get('/:id/edit', (req, res) => {
-  Fight.findById(req.params.id, (err, foundFight) => {
-    res.render('edit.ejs', { fight: foundFight, currentUser: req.session.currentUser})
+  Bellator.findById(req.params.id, (err, foundFight) => {
+    res.render('bellator/edit.ejs', { fight: foundFight, currentUser: req.session.currentUser})
   })
 })
 
 router.put('/:id', (req, res) => {
-  Fight.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedFight) => {
+  Bellator.findByIdAndUpdate(req.params.id, req.body, {new: true}, (err, updatedFight) => {
     res.redirect('/bellator')
   })
 })

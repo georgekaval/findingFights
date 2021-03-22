@@ -1,0 +1,23 @@
+<%- include('../partials/header.ejs') %>
+<%- include('../partials/nav.ejs') %>
+<main>
+  <h2>Fight Show Page</h2>
+  <ul>
+    <li><%=fight.name%></li>
+    <li><%=fight.date.toLocaleString()%> EST</li>
+    <li><%=fight.whereToWatch%></li>
+    <li><%=fight.fightList%></li>
+    <% if(currentUser === undefined){ %>
+    <%}else if(currentUser.admin === true){ %>
+      <a href="/bellator/<%=fight.id%>/edit">Edit</a>
+      <form  action="/bellator/<%=fight.id%>?_method=DELETE" method="POST">
+      <button>Delete</button>
+    <% } %>
+
+    </form>
+  </ul>
+  <a href="/bellator">Back to Bellator page</a>
+
+</main>
+
+<%- include('../partials/footer.ejs') %>
