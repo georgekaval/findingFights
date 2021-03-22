@@ -9,14 +9,14 @@
     <li><%=fight.fightList%></li>
     <% if(currentUser === undefined){ %>
     <%}else if(currentUser.admin === true){ %>
-      <a href="/ufc/<%=fight.id%>/edit">Edit</a>
-      <form  action="/ufc/<%=fight.id%>?_method=DELETE" method="POST">
+      <a href="/onefc/<%=fight.id%>/edit">Edit</a>
+      <form  action="/onefc/<%=fight.id%>?_method=DELETE" method="POST">
       <button>Delete</button>
     <% } %>
 
     </form>
   </ul>
-  <a href="/ufc">Back to UFC page</a>
+  <a href="/onefc">Back to One FC page</a>
 
 </main>
 
