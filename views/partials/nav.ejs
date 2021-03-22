@@ -1,18 +1,17 @@
-<div class="container">
 
 
-<nav class="navbar navbar-dark bg-dark">
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
   <div class="container-fluid">
-    <a class="text-light" href="/">HOME</a>
+    <a class="navbar-brand" href="/">Finding Fights</a>
 
   <a class="text-light" href="/ufc">UFC Fight Cards</a>
   <a class="text-light" href="/bellator">Bellator Fight Cards</a>
   <a class="text-light" href="/onefc">One FC Fight Cards</a>
   <ul>
     <% if (currentUser) { %>
-      <li><a href="/ufc/new">Add a fight</a>
-      </li>
-      <li>Welcome <%= currentUser.username %></li>
+
+      <li class="text-light">Welcome <%= currentUser.username %></li>
       <li>
         <form  action="/sessions?_method=DELETE" method="POST">
           <button>Log Out</button>
@@ -25,4 +24,3 @@
   </ul>
 </div>
 </nav>
-</div>

@@ -2,18 +2,19 @@
 <%- include('../partials/nav.ejs') %>
 
 <main>
-
   <h3>New User Page</h3>
   <br>
-  <form action="/users" method="POST">
+  <form class="form-select-lg "  action="/users" method="POST">
     <label>username:
-      <input type="text" name="username" />
+      <input class="form-control" type="text" placeholder="Enter username" name="username" />
     </label>
     <br>
     <br>
     <label>password:
-      <input type="password" name="password">
+      <input class="form-control" type="password" placeholder="Enter password" name="password">
     </label>
+    <br>
+    <small class="form-text text-muted">Password must contain a minimum of 8 characters.</small>
     <br>
     <br>
     <input type="submit" value="Create User"/>

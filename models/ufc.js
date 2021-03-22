@@ -6,7 +6,7 @@ const fightSchema = new Schema({
   date: {type: Date, required: true},
   whereToWatch: {type: String, required: true},
   fightList: {type: Array, required: true},
-})
+}, {timestamps: true})
 
 const Fight = model('Fight', fightSchema)
 
