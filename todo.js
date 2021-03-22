@@ -1,2 +1,1 @@
-//when no user is logged in, i get error when going to ufc index page
-//
+//Do i need to make a new model for the other mma organizations or fit them

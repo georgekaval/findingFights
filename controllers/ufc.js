@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-const Fight = require('../models/ufc')
+const Fight = require('../models/fights')
 
 router.get('/', (req, res) => {
   Fight.find({}, (err, foundFights, next) => {
@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
       console.log(err)
       next(err)
     } else {
-      res.render('index.ejs', {
+      res.render('ufc/index.ejs', {
         fights: foundFights, currentUser: req.session.currentUser
       })
     }
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/new', (req, res) => {
-  res.render('new.ejs', {currentUser: req.session.currentUser})
+  res.render('ufc/new.ejs', {currentUser: req.session.currentUser})
 })
 
 router.get('/seed', (req, res) => {
@@ -56,7 +56,7 @@ router.post('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   Fight.findById(req.params.id, (err, foundFight) => {
-    res.render('show.ejs', {fight: foundFight, currentUser: req.session.currentUser})
+    res.render('ufc/show.ejs', {fight: foundFight, currentUser: req.session.currentUser})
   })
 })
 
@@ -72,7 +72,7 @@ router.delete('/:id', (req, res) => {
 
 router.get('/:id/edit', (req, res) => {
   Fight.findById(req.params.id, (err, foundFight) => {
-    res.render('edit.ejs', { fight: foundFight, currentUser: req.session.currentUser})
+    res.render('ufc/edit.ejs', { fight: foundFight, currentUser: req.session.currentUser})
   })
 })
 
