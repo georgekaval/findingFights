@@ -9,13 +9,18 @@
         <a href="/ufc/<%=fights[i].id%>"><%=fights[i].name%> </a>
         <p><%=fights[i].fightList[0]%>
         </p>
-        <% if(currentUser.admin === true){ %>
+
+        <% if(currentUser === undefined){ %>
+
+
+        <% } else if(currentUser.admin === true){ %>
           <a href="/ufc/<%=fights[i].id%>/edit">Edit</a>
           <form  action="/ufc/<%=fights[i].id%>?_method=DELETE" method="POST">
           <button>Delete</button>
+          </form>
         <% } %>
 
-        </form>
+
       </li>
     <% } %>
   </ul>
