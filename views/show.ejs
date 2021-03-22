@@ -7,9 +7,13 @@
     <li><%=fight.date.toLocaleString()%> EST</li>
     <li><%=fight.whereToWatch%></li>
     <li><%=fight.fightList%></li>
-  
+    <% if(currentUser.admin === true){ %>
       <a href="/ufc/<%=fight.id%>/edit">Edit</a>
+      <form  action="/ufc/<%=fight.id%>?_method=DELETE" method="POST">
+      <button>Delete</button>
+    <% } %>
 
+    </form>
   </ul>
   <a href="/ufc">Back to UFC page</a>
 
