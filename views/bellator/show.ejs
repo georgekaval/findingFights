@@ -9,14 +9,16 @@
     <li><%=fight.fightList%></li>
     <% if(currentUser === undefined){ %>
     <%}else if(currentUser.admin === true){ %>
-      <a href="/bellator/<%=fight.id%>/edit">Edit</a>
+      <div class="lineUpButtons">
+      <a class="btn btn-danger editbuttons" href="/bellator/<%=fight.id%>/edit">Edit</a>
       <form  action="/bellator/<%=fight.id%>?_method=DELETE" method="POST">
-      <button>Delete</button>
+      <button class="btn btn-danger">Delete</button>
     <% } %>
 
     </form>
+    </div>
   </ul>
-  <a href="/bellator">Back to Bellator page</a>
+  <a class="btn btn-danger" href="/bellator">Back to Bellator page</a>
 
 </main>
 

@@ -44,3 +44,10 @@ ul{
 .btn-danger{
   background-color: #A52A2A;
 }
+.lineUpButtons{
+  display: flex;
+  justify-content: center;
+}
+.editbuttons{
+  margin-right: 15px;
+}

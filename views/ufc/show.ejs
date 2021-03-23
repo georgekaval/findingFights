@@ -9,15 +9,18 @@
     <li><%=fight.fightList%></li>
     <% if(currentUser === undefined){ %>
     <%}else if(currentUser.admin === true){ %>
-      <a  href="/ufc/<%=fight.id%>/edit">Edit</a>
+      <div class="lineUpButtons">
+      <a class="btn btn-danger editbuttons" href="/ufc/<%=fight.id%>/edit">Edit</a>
       <form  action="/ufc/<%=fight.id%>?_method=DELETE" method="POST">
-      <button>Delete</button>
+      <button class="btn btn-danger">Delete</button>
+
     <% } %>
 
     </form>
+      </div>
   </ul>
-  <a  href="/ufc">Back to UFC page</a>
-
+  <a class="btn btn-danger" href="/ufc">Back to UFC page</a>
+  <br>
 </main>
 
 <%- include('../partials/footer.ejs') %>

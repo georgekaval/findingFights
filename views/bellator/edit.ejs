@@ -4,20 +4,28 @@
 <main>
 
   <h3>Edit <%=fight.name %> fight</h3>
-  <form action="/bellator/<%=fight.id%>?_method=PUT" method="POST">
+  <form class="form-select-lg" action="/bellator/<%=fight.id%>?_method=PUT" method="POST">
     <label>Name:
       <input type="text" name="name" value="<%=fight.name%>"/>
     </label>
+    <br>
+    <br>
     <label>Date:
       <input type="text" name="date" value="<%=fight.date%>"/>
     </label>
+    <br>
+    <br>
     <label>Where to Watch:
       <input type="text" name="whereToWatch" value="<%=fight.whereToWatch%>"/>
     </label>
+    <br>
+    <br>
     <label>Fight Card:
       <input type="text" name="fightList" value="<%=fight.fightList%>"/>
     </label>
-    <input type="submit" name="" value="Submit Changes"/>
+    <br>
+    <br>
+    <input class="btn btn-danger" type="submit" name="" value="Submit Changes"/>
   </form>
 
 

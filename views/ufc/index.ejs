@@ -12,20 +12,24 @@
 
         <% if(currentUser === undefined){ %>
 
-
         <% } else if(currentUser.admin === true){ %>
-          <a  href="/ufc/<%=fights[i].id%>/edit">Edit</a>
-          <form  action="/ufc/<%=fights[i].id%>?_method=DELETE" method="POST">
-          <button >Delete</button>
-          </form>
-
-          <a  href="ufc/new">Add a fight</a>
+          <div class="lineUpButtons">
+            <a class="btn btn-dark editbuttons" href="/ufc/<%=fights[i].id%>/edit">Edit</a>
+            <form  action="/ufc/<%=fights[i].id%>?_method=DELETE" method="POST">
+            <button class="btn btn-dark editbuttons">Delete</button>
+            </form>
+          </div>
         <% } %>
         <hr>
-
       </li>
     <% } %>
   </ul>
+  <% if(currentUser === undefined){ %>
 
+  <% } else if(currentUser.admin === true){ %>
+    <a  class="btn btn-dark"href="ufc/new">Add a fight card</a>
+    <% } %>
+    <br>
+    <br>
 </main>
 <%- include('../partials/footer.ejs') %>

@@ -1,25 +1,25 @@
 
 
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top navbar-static-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">Finding Fights</a>
 
-  <a class="text-light" href="/ufc">UFC Fight Cards</a>
-  <a class="text-light" href="/bellator">Bellator Fight Cards</a>
-  <a class="text-light" href="/onefc">One FC Fight Cards</a>
+  <a class="btn btn-dark" href="/ufc">UFC Fight Cards</a>
+  <a class="btn btn-dark" href="/bellator">Bellator Fight Cards</a>
+  <a class="btn btn-dark" href="/onefc">One FC Fight Cards</a>
   <ul>
     <% if (currentUser) { %>
 
-      <li class="text-light">Welcome <%= currentUser.username %></li>
+      <li class="btn btn-dark">Welcome <%= currentUser.username %></li>
       <li>
         <form  action="/sessions?_method=DELETE" method="POST">
-          <button>Log Out</button>
+          <button class="btn btn-dark" >Log Out</button>
         </form>
       </li>
     <% } else { %>
-      <li><a class="text-light" href="/sessions/new">Log In</a></li>
-      <li><a class="text-light" href="/users/new">Sign Up</a></li>
+      <li><a class="btn btn-dark" href="/sessions/new">Log In</a></li>
+      <li><a class="btn btn-dark" href="/users/new">Sign Up</a></li>
     <% } %>
   </ul>
 </div>
