@@ -37,3 +37,10 @@ ul{
 #passMessageWrong{
   color: red;
 }
+.logoImgs{
+  padding-bottom: 30px;
+}
+
+.btn-danger{
+  background-color: #A52A2A;
+}

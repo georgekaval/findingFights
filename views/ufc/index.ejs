@@ -6,7 +6,7 @@
   <ul>
     <% for(let i = 0; i < fights.length; i++) { %>
       <li>
-        <a href="/ufc/<%=fights[i].id%>"><%=fights[i].name%> </a>
+        <a class="btn btn-danger" href="/ufc/<%=fights[i].id%>"><%=fights[i].name%> </a>
         <p><%=fights[i].fightList[0]%>
         </p>
 
@@ -14,17 +14,18 @@
 
 
         <% } else if(currentUser.admin === true){ %>
-          <a href="/ufc/<%=fights[i].id%>/edit">Edit</a>
+          <a  href="/ufc/<%=fights[i].id%>/edit">Edit</a>
           <form  action="/ufc/<%=fights[i].id%>?_method=DELETE" method="POST">
-          <button>Delete</button>
+          <button >Delete</button>
           </form>
-        <% } %>
 
+          <a  href="ufc/new">Add a fight</a>
+        <% } %>
+        <hr>
 
       </li>
     <% } %>
   </ul>
 
-  <a href="ufc/new">Add a fight</a>
 </main>
 <%- include('../partials/footer.ejs') %>
