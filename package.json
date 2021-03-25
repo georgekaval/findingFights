@@ -1,6 +1,9 @@
 {
   "name": "findingfights",
   "version": "1.0.0",
+  "engines": {
+    "node": "15.4.0"
+  },
   "description": "A site to find upcoming combat sports fights",
   "main": "server.js",
   "scripts": {

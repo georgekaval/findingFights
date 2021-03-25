@@ -6,20 +6,19 @@
     <li><%=fight.name%></li>
     <li><%=fight.date.toLocaleString()%> EST</li>
     <li><%=fight.whereToWatch%></li>
-    <li><%=fight.fightList%></li>
+    <li><%=fight.fightList[0]%></li>
+    <li><%=fight.fightList[1]%></li>
     <% if(currentUser === undefined){ %>
     <%}else if(currentUser.admin === true){ %>
       <div class="lineUpButtons">
-      <a class="btn btn-danger editbuttons" href="/ufc/<%=fight.id%>/edit">Edit</a>
-      <form  action="/ufc/<%=fight.id%>?_method=DELETE" method="POST">
-      <button class="btn btn-danger">Delete</button>
-
-    <% } %>
-
-    </form>
+        <a class="btn btn-danger editbuttons" href="/ufc/<%=fight.id%>/edit">Edit</a>
+        <form  action="/ufc/<%=fight.id%>?_method=DELETE" method="POST">
+        <button class="btn btn-danger">Delete</button>
+        </form>
       </div>
+    <% } %>
   </ul>
-  <a class="btn btn-danger" href="/ufc">Back to UFC page</a>
+  <a class="btn btn-danger backShow" href="/ufc">Back to UFC page</a>
   <br>
 </main>
 

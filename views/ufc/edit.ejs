@@ -20,14 +20,12 @@
     </label>
     <br>
     <br>
-    <% for(let i = 0; i < fightList.length; i++){ %>
-      <label>Fight:
-        <input type="text" name="fightList" value="<%=fight.fightList[i]%>"/>
-      </label>
-      <br>
-      <br>
-    <% } %>
 
+    <label>Fight Card:
+      <input type="text" name="fightList" value="<%=fight.fightList%>"/>
+    </label>
+    <br>
+    <br>
     <input class="btn btn-danger" type="submit" name="" value="Submit Changes"/>
   </form>
 

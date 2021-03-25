@@ -10,13 +10,12 @@
     <% if(currentUser === undefined){ %>
     <%}else if(currentUser.admin === true){ %>
       <div class="lineUpButtons">
-      <a class="btn btn-danger editbuttons" href="/onefc/<%=fight.id%>/edit">Edit</a>
-      <form  action="/onefc/<%=fight.id%>?_method=DELETE" method="POST">
-      <button class="btn btn-danger">Delete</button>
+        <a class="btn btn-danger editbuttons" href="/onefc/<%=fight.id%>/edit">Edit</a>
+        <form  action="/onefc/<%=fight.id%>?_method=DELETE" method="POST">
+        <button class="btn btn-danger">Delete</button>
+        </form>
+      </div>
     <% } %>
-
-    </form>
-    </div>
   </ul>
   <a class="btn btn-danger" href="/onefc">Back to One FC page</a>
 

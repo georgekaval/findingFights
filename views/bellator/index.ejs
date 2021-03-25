@@ -7,7 +7,7 @@
     <% for(let i = 0; i < fights.length; i++) { %>
       <li>
         <a class="btn btn-danger" href="/bellator/<%=fights[i].id%>"><%=fights[i].name%> </a>
-        <p><%=fights[i].fightList[0]%>
+        <p>Main Event <br> <%=fights[i].fightList[0]%>
         </p>
 
         <% if(currentUser === undefined){ %>

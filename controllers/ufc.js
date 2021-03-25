@@ -26,7 +26,7 @@ router.get('/seed', (req, res) => {
       name: 'UFC fight night 200',
       date: "2021-03-29T20:00:00",
       whereToWatch: 'ESPN +',
-      fightList: ['Jon Jones vs Francis Ngannou']
+      fightList: ['Jon Jones vs Francis Ngannou', 'George vs Tony']
     },
     {
       name: 'UFC fight night 201',
