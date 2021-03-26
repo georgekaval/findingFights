@@ -55,9 +55,14 @@ router.post('/', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-  UFC.findById(req.params.id, (err, foundFight) => {
-    res.render('ufc/show.ejs', {fight: foundFight, currentUser: req.session.currentUser})
-  })
+  if(req.session.currentUser){
+    UFC.findById(req.params.id, (err, foundFight) => {
+      res.render('ufc/show.ejs', {fight: foundFight, currentUser: req.session.currentUser})
+    })
+  } else{
+    res.redirect('/sessions/new')
+  }
+
 })
 
 router.delete('/:id', (req, res) => {
