@@ -1,6 +1,6 @@
 # findingFights
 
-![Wireframe] (Wireframe_Routes_Project.png)
+![Wireframe](Wireframe_Routes_Project.png)
 
 It is hard to keep track of when all the fights from the different organizations are on and where to watch them.  So this will be a solution to bring all these organizations, and in the future the organizations of multiple combat sports into one place.
 
