@@ -4,6 +4,7 @@ const router = express.Router()
 const Onefc = require('../models/onefc')
 
 router.get('/', (req, res) => {
+
   Onefc.find({}, (err, foundFights, next) => {
     if (err) {
       console.log(err)
@@ -55,9 +56,13 @@ router.post('/', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
+  if(req.session.currentUser){
   Onefc.findById(req.params.id, (err, foundFight) => {
     res.render('onefc/show.ejs', {fight: foundFight, currentUser: req.session.currentUser})
   })
+  } else{
+    res.redirect('/sessions/new')
+  }
 })
 
 router.delete('/:id', (req, res) => {

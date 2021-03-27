@@ -55,9 +55,13 @@ router.post('/', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
+  if(req.session.currentUser){
   Bellator.findById(req.params.id, (err, foundFight) => {
     res.render('bellator/show.ejs', {fight: foundFight, currentUser: req.session.currentUser})
   })
+  } else{
+    res.redirect('/sessions/new')
+  }
 })
 
 router.delete('/:id', (req, res) => {
