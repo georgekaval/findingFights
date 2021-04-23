@@ -30,7 +30,7 @@ app.use(express.urlencoded({extended: true}))
 app.use(session({
   secret:process.env.SECRET,
   resave: false,
-  saveUninitiaized: false,
+  saveUninitialized: false,
 }))
 const ufcControllers = require('./controllers/ufc')
 const usersControllers = require('./controllers/users')
